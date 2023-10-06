@@ -3,6 +3,8 @@ import styled from 'styled-components';
 //background
 import background from './../assets/bg.png';
 
+import {Link} from 'react-router-dom';
+
 export const colors = {
     primary: "#fff",
     theme: "#BE185D",
@@ -42,7 +44,7 @@ export const StyledSubTitle = styled.p `
     margin-bottom: 25px;
 `;
 
-export const Avator = styled.div `
+export const Avatar = styled.div `
     width: 85px;
     height: 85px;
     border-radius: 50px;
@@ -51,4 +53,32 @@ export const Avator = styled.div `
     background-position: center;
     margin: auto;
 
+`;
+
+export const StyledButton = styled(Link) `
+
+    padding: 10px;
+    width: 150px;
+    background-color: transparent;
+    font-size: 16px;
+    border: 3px solid ${colors.primary};
+    border-radius: 25px;
+    color: ${colors.primary};
+    text-decoration: none;
+    text-align: center;
+    transition: ease-in-out 0.3s;
+
+    &:hover{
+        background-color: ${colors.primary};
+        color: ${colors.theme};
+        cursor: pointer;
+    }
+
+`;
+
+export const ButtonGroup = styled.div `
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 25px;
 `;

@@ -2,14 +2,19 @@ import Home from './pages/home.js';
 
 import {StyledContainer} from './components/styles.js';
 
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 function App() {
   return (
-    <StyledContainer>
 
-       <Home />
+    <Router>
+      <StyledContainer>
 
-    </StyledContainer>
-    
+        <Home />
+
+      </StyledContainer>
+    </Router>
+
   );
 }
 
