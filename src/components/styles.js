@@ -90,7 +90,9 @@ export const StyledTextInput = styled.input `
     letter-spacing: 1px; 
     color: ${colors.light2};
     border: 0;
-    display: 5px, auto, 10px, auto;
+    outline: 0;
+    display: block;
+    margin: 5px, auto, 10px, auto;
     transition: ease-in-out 0.3s;
 
     ${(props) => props.invalid && `background-color: ${colors.red}; color: ${colors.primary};`}
@@ -130,3 +132,4 @@ export const StyledFormButton = styled.button `
         cursor: pointer;
     }
 `;
+
