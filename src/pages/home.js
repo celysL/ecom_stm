@@ -20,10 +20,10 @@ const Home = () => {
                 <Avatar image={Logo} />
             </div>
 
-                <StyledTitle size={65}>
+                <StyledTitle size={40}>
                     La STM vous souhaite la bienvenue à bord!
                 </StyledTitle>
-                <StyledSubTitle size={27}>
+                <StyledSubTitle size={20}>
                     Feel free to explore our site 
                 </StyledSubTitle>
 

@@ -1,4 +1,5 @@
-import Home from './pages/home.js';
+import Home from "./pages/home.js";
+import Login from "./pages/login.js"; 
 
 import {StyledContainer} from './components/styles.js';
 
@@ -10,7 +11,7 @@ function App() {
     <Router>
       <StyledContainer>
 
-        <Home />
+        <Login />
 
       </StyledContainer>
     </Router>
