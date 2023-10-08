@@ -101,6 +101,32 @@ export const StyledTextInput = styled.input `
 `;
 
 export const StyledLabel = styled.p `
-    
+    text-align: left;
+    font-size: 13px;
+    font-weight: bold;
 
+`;
+
+export const StyledFormArea = styled.div `
+    background-color: ${props => props.bg || colors.light1};
+    text-align: center;
+    padding: 45px;
+
+`;
+
+export const StyledFormButton = styled.button `
+    padding: 10px;
+    width: 150px;
+    background-color: transparent;
+    font-size: 16px;
+    border: 2px solid ${colors.theme};
+    border-radius: 25px;
+    color: ${colors.theme};
+    transition: ease-in-out 0.3s;
+
+    &:hover{
+        background-color: ${colors.theme};
+        color: ${colors.primary};
+        cursor: pointer;
+    }
 `;
