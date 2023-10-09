@@ -5,6 +5,7 @@ import Logo from './../assets/logo.png';
 import {Formik, Form} from 'formik';
 
 import {TextInput} from '../components/FormLib.js';
+import{FiMail, FiLock} from 'react-icons/fi';
 
 const Login = () => {
     return (
@@ -13,7 +14,16 @@ const Login = () => {
                 <Avatar image={Logo} />
                 <StyledTitle color={colors.theme} size={30}> Member Login </StyledTitle>
 
-                <Formik>
+                <Formik
+                    initialValues={{
+                        email: "", 
+                        password: "", 
+                    }}
+                    onSubmit={(values, {setSubmitting}) => {
+                        console.log(values);
+                    }}
+                >
+
                     {() => (
                         <Form>
                             <TextInput 
@@ -21,6 +31,7 @@ const Login = () => {
                                 type = "email"
                                 label = "Email Address"
                                 placeholder= "email address"
+                                icon = {<FiMail/>}
                             
                             />
                             <br></br>
@@ -29,6 +40,7 @@ const Login = () => {
                                 type = "password"
                                 label = "Password"
                                 placeholder= "password"
+                                icon = {<FiLock/>}
                             
                             />
 

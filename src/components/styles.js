@@ -44,14 +44,14 @@ export const StyledSubTitle = styled.p `
 `;
 
 export const Avatar = styled.div `
-    width: 85px;
-    height: 85px;
-    border-radius: 50px;
+    width: 90px;
+    height: 90px;
+    border-radius: 30px;
     background-image: url(${props => props.image});
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     margin: auto;
-
+    background-repeat: no-repeat;
 `;
 
 export const StyledButton = styled(Link) `
@@ -88,7 +88,8 @@ export const StyledTextInput = styled.input `
     padding-left: 50px;
     font-size: 17px;
     letter-spacing: 1px; 
-    color: ${colors.light2};
+    color: ${colors.dark1};
+    background-color: ${colors.light2}
     border: 0;
     outline: 0;
     display: block;
@@ -106,6 +107,7 @@ export const StyledLabel = styled.p `
     text-align: left;
     font-size: 13px;
     font-weight: bold;
+    margin-bottom: 5px;
 
 `;
 
@@ -133,3 +135,12 @@ export const StyledFormButton = styled.button `
     }
 `;
 
+export const StyledIcon = styled.p `
+    color: ${colors.dark1};
+    position: absolute;
+    font-size: 21px;
+    top: 35px;
+    ${(props) => props.right && `right: 15px;`}
+    ${(props) => !props.right && `left: 15px;`}
+
+`;
