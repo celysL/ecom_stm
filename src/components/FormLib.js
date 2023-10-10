@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {useField} from 'formik';
 
-import {StyledTextInput, StyledLabel, StyledIcon} from "./../components/styles.js";
+import {StyledTextInput, StyledLabel, StyledIcon, ErrorMsg, TextLink} from "./../components/styles.js";
 
 import {FiEyeOff, FiEye} from 'react-icons/fi';
 
@@ -14,10 +14,12 @@ export const TextInput = ({icon, ...props}) => {
         <div style={{position: "relative"}} >
             <StyledLabel htmlFor={props.name}>{props.label}</StyledLabel>
 
-            {props.type !== "password" &&  <StyledTextInput {...field} {...props} />}
+            {props.type !== "password" && ( <StyledTextInput 
+            invalid={meta.touched && meta.error} {...field} {...props} />
+            )}
 
             {props.type === "password" && (
-                <StyledTextInput 
+                <StyledTextInput invalid={meta.touched && meta.error}
                     {...field} {...props}
                     type = {show ? "text": "password"}
                 />
@@ -27,15 +29,20 @@ export const TextInput = ({icon, ...props}) => {
             <StyledIcon>{icon}</StyledIcon>
 
             { 
-                props.type === "password" && 
+                props.type === "password" && (
                 <StyledIcon onClick={() => setShow(!show)} right> 
                     {show && <FiEye/>}
                     {!show && <FiEyeOff/>}
                 </StyledIcon>
-            }
+            )}
             
+    
+        {meta.touched && meta.error ? (
+            <ErrorMsg>{meta.error}</ErrorMsg>
+        ): (
+            <ErrorMsg style={{visibility: "hidden"}}>.</ErrorMsg>
+        )}
         </div>
+    );
 
-    )
-
-}
+};
